@@ -1,0 +1,348 @@
+/* ========================================
+   Anna | Design Portfolio
+   GitHub Pages static version
+   ======================================== */
+
+:root {
+  --text: #333;
+  --accent: #7dbb55;
+  --light-green: #e1eac2;
+  --light-blue: #f1f9fd;
+  --border: #ddd;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fff;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  width: 100%;
+  padding: 22px 30px;
+  background: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.site-logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.global-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.global-nav a {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Main visual ---------- */
+
+.hero {
+  max-width: 1057px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 0;
+}
+
+/* ---------- Common section ---------- */
+
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 90px 30px;
+}
+
+.section-title {
+  margin: 0 0 45px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 1px;
+  margin: 18px auto 0;
+  background: var(--text);
+}
+
+/* ---------- Works ---------- */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px 30px;
+}
+
+.work-card {
+  margin: 0;
+}
+
+.work-card a {
+  display: block;
+}
+
+.work-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.work-title {
+  margin: 14px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.work-category {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #777;
+}
+
+/* ---------- About ---------- */
+
+.about-section {
+  max-width: none;
+  padding: 90px 30px;
+  background: linear-gradient(
+    207deg,
+    rgb(225, 234, 194) 0%,
+    rgb(240, 251, 219) 31%,
+    rgb(241, 249, 253) 100%
+  );
+}
+
+.about-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about-content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-content p {
+  margin: 0 0 20px;
+}
+
+.about-name {
+  margin-bottom: 25px !important;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-section {
+  text-align: center;
+}
+
+.contact-text {
+  margin: 0 auto 30px;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 12px 34px;
+  border: 1px solid var(--text);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  transition: 0.2s ease;
+}
+
+.contact-button:hover {
+  opacity: 1;
+  background: var(--text);
+  color: #fff;
+}
+
+/* ---------- Social ---------- */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 35px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--text);
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 35px 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 18px 20px;
+  }
+
+  .header-inner {
+    display: block;
+    text-align: center;
+  }
+
+  .site-logo {
+    margin-bottom: 12px;
+    font-size: 21px;
+  }
+
+  .global-nav ul {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .global-nav a {
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 0 15px;
+  }
+
+  .section {
+    padding: 65px 20px;
+  }
+
+  .section-title {
+    margin-bottom: 35px;
+    font-size: 26px;
+  }
+
+  .works-grid {
+    gap: 30px 20px;
+  }
+
+  .about-section {
+    padding: 65px 20px;
+  }
+}
+
+/* ---------- Smartphone ---------- */
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 15px;
+  }
+
+  .site-logo {
+    font-size: 18px;
+  }
+
+  .global-nav ul {
+    gap: 13px;
+  }
+
+  .global-nav a {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 0;
+  }
+
+  .section {
+    padding: 50px 18px;
+  }
+
+  .section-title {
+    margin-bottom: 28px;
+    font-size: 23px;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .work-title {
+    font-size: 14px;
+  }
+
+  .about-section {
+    padding: 50px 18px;
+  }
+
+  .about-content {
+    font-size: 14px;
+  }
+
+  .contact-section {
+    text-align: center;
+  }
+}
