@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anna's Design Portfolio">
+  <title>Anna | Design Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #5d7435;
+      --text: #454545;
+      --header-height: 64px;
+      --content-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--header-height);
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    .header-inner {
+      max-width: var(--content-width);
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      color: #111;
+      font-size: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .nav-list {
+      display: flex;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav-list a {
+      font-size: 14px;
+      transition: color .2s;
+    }
+    .nav-list a:hover { color: var(--green); }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      width: 100%;
+      min-height: 370px;
+      background: url("images/main.png") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Common */
+    .section {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 90px 24px;
+    }
+    .section-title {
+      margin: 0 0 55px;
+      color: var(--green);
+      text-align: center;
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: .04em;
+    }
+
+    /* Works */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 42px 28px;
+    }
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 2 / 1;
+      object-fit: cover;
+    }
+    .work-title {
+      margin: 14px 0 0;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .more-button-wrap {
+      margin-top: 55px;
+      text-align: center;
+    }
+    .more-button {
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 100px;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+    }
+
+    /* About */
+    .about-box {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 55px 50px;
+      background: linear-gradient(207deg, rgb(225,234,194) 0%, rgb(240,251,219) 31%, rgb(241,249,253) 100%);
+      display: grid;
+      grid-template-columns: 30% 60%;
+      gap: 10%;
+      align-items: center;
+    }
+    .profile-image {
+      width: 120px;
+      height: 200px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+    .about-name {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+    }
+    .social svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    .about-text {
+      margin: 0;
+      font-size: 13px;
+    }
+    .view-more-wrap {
+      margin-top: 25px;
+      text-align: center;
+    }
+    .view-more {
+      display: inline-block;
+      padding: 5px 18px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 300;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+    .contact-text {
+      margin: 0 0 28px;
+      font-size: 14px;
+    }
+    .contact-button {
+      display: inline-block;
+      padding: 8px 25px;
+      background: rgba(92,115,53,.11);
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 28px 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* Tablet / mobile */
+    @media (max-width: 768px) {
+      .nav-list {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+      }
+      .nav-list.is-open { display: flex; }
+      .nav-list li { border-top: 1px solid #eee; }
+      .nav-list a {
+        display: block;
+        padding: 14px 24px;
+      }
+      .menu-button { display: block; }
+
+      .hero { min-height: 280px; }
+      .section { padding: 70px 20px; }
+      .section-title { margin-bottom: 40px; font-size: 26px; }
+
+      .works-grid { grid-template-columns: repeat(2, 1fr); gap: 35px 18px; }
+
+      .about-box {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 40px 30px;
+      }
+      .profile-image { height: 170px; }
+    }
+
+    @media (max-width: 480px) {
+      :root { --header-height: 58px; }
+      .header-inner { padding: 0 16px; }
+      .logo { font-size: 16px; }
+      .hero { min-height: 180px; }
+
+      .section { padding: 55px 16px; }
+      .section-title { margin-bottom: 32px; font-size: 24px; }
+
+      .works-grid { grid-template-columns: 1fr; gap: 32px; }
+      .work-title { font-size: 13px; }
+
+      .about-box { padding: 30px 20px; }
+      .about-text { font-size: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top">Anna | Design Portfolio</a>
+
+      <button class="menu-button" type="button" aria-label="メインメニュー" aria-expanded="false">☰</button>
+
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#top">TOP</a></li>
+          <li><a href="#works">works</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="メインビジュアル"></section>
+
+    <section id="works" class="section">
+      <h1 class="section-title">works</h1>
+
+      <div class="works-grid">
+        <article class="work-card">
+          <a href="works/bookcover.html">
+            <img src="images/work01.png" alt="架空のECサイト（ブックカバー専門店）">
+            <p class="work-title">【自主制作】架空のECサイト(ブックカバー専門店)制作</p>
+          </a>
+        </article>
+
+        <article class="work-card">
+          <img src="images/work02.png" alt="架空ホテルのキャンペーンサイト制作">
+          <p class="work-title">【自主制作】架空ホテルのキャンペーンサイト制作</p>
+        </article>
+
+        <article class="work-card">
+          <img src="images/work03.png" alt="名刺デザイン">
+          <p class="work-title">【実績】名刺デザイン</p>
+        </article>
+
+        <article class="work-card">
+          <img src="images/work04.png" alt="リクルート用のInstagramバナー広告">
+          <p class="work-title">【実績】リクルート用のInstagramバナー広告</p>
+        </article>
+
+        <article class="work-card">
+          <img src="images/work05.png" alt="旅フォトコンテストのフライヤー">
+          <p class="work-title">【自主制作】旅フォトコンテストのフライヤー</p>
+        </article>
+
+        <article class="work-card">
+          <img src="images/work06.png" alt="Instagram投稿用画像">
+          <p class="work-title">【自主制作】Instagram投稿用画像</p>
+        </article>
+
+        <article class="work-card">
+          <img src="images/work07.png" alt="求人サイトの集客バナー">
+          <p class="work-title">【自主制作】求人サイトの集客バナー</p>
+        </article>
+
+        <article class="work-card">
+          <img src="images/work08.png" alt="コスメバナー">
+          <p class="work-title">【自主制作】コスメバナー</p>
+        </article>
+
+        <article class="work-card">
+          <img src="images/work09.png" alt="CRM配信用バナー制作">
+          <p class="work-title">【自主制作】CRM配信用バナー制作</p>
+        </article>
+      </div>
+
+      <div class="more-button-wrap">
+        <a class="more-button" href="#works">more</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h1 class="section-title">about</h1>
+
+      <div class="about-box">
+        <div>
+          <img class="profile-image" src="images/profile.png" alt="プロフィール画像">
+        </div>
+
+        <div>
+          <p class="about-name">Anna</p>
+
+          <div class="social">
+            <a href="https://x.com/anna_web0614" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.982 10.622 20.54 3h-1.554l-5.693 6.618L8.745 3H3.5l6.876 10.007L3.5 21h1.554l6.012-6.989L15.868 21h5.245l-7.131-10.378Zm-2.128 2.474-.697-.997-5.543-7.93H8l4.474 6.4.697.996 5.815 8.318h-2.387l-4.745-6.787Z"/>
+              </svg>
+            </a>
+          </div>
+
+          <p class="about-text">
+            2023年、妊娠中にキャリアスクールshelikesへ入会してwebデザインを学びました。<br>
+            前職CADオペレーターとして製造現場で働いた経験を活かし、<br>
+            丁寧なヒアリングでお客様の気持ちに寄り添ったデザインをお届けします。<br>
+            プライベートでは1児の母です。
+          </p>
+
+          <div class="view-more-wrap">
+            <span class="view-more">view more</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h1 class="section-title">contact</h1>
+      <p class="contact-text">お仕事のご相談やご依頼など、こちらからご連絡ください</p>
+      <!-- TODO: メールアドレス等の連絡先が決まったらhrefを差し替え -->
+      <a class="contact-button" href="mailto:YOUR-EMAIL@example.com">お問い合わせ</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Anna</p>
+  </footer>
+
+  <script>
+    const button = document.querySelector(".menu-button");
+    const nav = document.querySelector(".nav-list");
+
+    button.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      button.setAttribute("aria-expanded", isOpen);
+    });
+
+    document.querySelectorAll(".nav-list a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("is-open");
+        button.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+</body>
+</html>
